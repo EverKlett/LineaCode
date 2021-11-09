@@ -13,7 +13,7 @@ class MaquinaController extends Controller {
     }
     
     public function store(Request $oRequest) {
-        Maquina::create($oRequest->all());
+        Maquina::create($oRequest::all());
     }
 
     public function show($iCodigo) {
@@ -22,7 +22,7 @@ class MaquinaController extends Controller {
 
     public function update(Request $oRequest, $iCodigo) {
         $oMaquina = Maquina::get($iCodigo);
-        $oMaquina->update($oRequest->all());
+        $oMaquina->update($oRequest::all());
     }
     
     public function destroy($iCodigo) {

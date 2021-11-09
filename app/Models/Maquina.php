@@ -16,6 +16,7 @@ class Maquina extends Model
     private string $maq_observacao;
     protected $fillable = array('maq_codigo', 'maq_descricao', 'maq_observacao');
     protected $primaryKey = 'maq_codigo';
+    public $timestamps = false;
 
     
     /**

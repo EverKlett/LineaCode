@@ -19,6 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::apiResource('maquina', 'MaquinaController');
+
 Route::get('/maquina', [App\Http\Controllers\MaquinaController::class, 'index']);
 
 Route::get('/maquina/{iCodigo}', [MaquinaController::class, 'show']);
