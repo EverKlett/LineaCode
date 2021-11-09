@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Maquina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MaquinaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/maquina', function($iCodigo) {
-    if (isset($iCodigo) && !empty($iCodigo)) {
+Route::get('/maquina', [App\Http\Controllers\MaquinaController::class, 'index']);
 
-    } else {
-        
-    }
-    return Maquina::all();
-});
+Route::get('/maquina/{iCodigo}', [MaquinaController::class, 'show']);
 
-Route::get('/maquina', function() {
-
-});
+Route::put('/maquina', [MaquinaController::class, 'store']);

@@ -23,7 +23,7 @@ class Maquina extends Model
      * 
      * @return Maquina
      */
-    function getAll() {
+    public function getAll() {
         return self::all();
     }
 
