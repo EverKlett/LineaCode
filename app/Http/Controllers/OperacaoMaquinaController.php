@@ -3,30 +3,30 @@
 Namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Maquina;
+use App\Models\OperacaoMaquina;
 use Illuminate\Support\Facades\Request;
 
-class MaquinaController extends Controller {
+class OperacaoMaquinaController extends Controller {
     
     public function index() {
-        return Maquina::all();
+        return OperacaoMaquina::all();
     }
     
     public function store(Request $oRequest) {
-        Maquina::create($oRequest::all());
+        OperacaoMaquina::create($oRequest::all());
     }
 
     public function show($iCodigo) {
-        return Maquina::findOrfail($iCodigo);
+        return OperacaoMaquina::findOrfail($iCodigo);
     }
 
     public function update(Request $oRequest, $iCodigo) {
-        $oMaquina = Maquina::findOrfail($iCodigo);
+        $oMaquina = OperacaoMaquina::findOrfail($iCodigo);
         $oMaquina->update($oRequest::all());
     }
     
     public function destroy($iCodigo) {
-        $oMaquina = Maquina::findOrfail($iCodigo);
+        $oMaquina = OperacaoMaquina::findOrfail($iCodigo);
         $oMaquina->delete();
     }
 }
